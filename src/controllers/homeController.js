@@ -14,7 +14,7 @@ exports.getImages = (req, res) =>{
 
     const images = [];
 
-    const readDir = util.promisify(fs.readdir)
+    const readDir = util.promisify(fs.readdir);
 
 // Reading current working directory
 readDir(uploadDir)
@@ -27,13 +27,7 @@ readDir(uploadDir)
 
 res.send(images);
 })
-
-// If promise is rejected
 .catch(err => {
    console.log(err);
 })
-    // then(erasmo => {
-    //     console.log(images);
-    //     res.send(images);
-    // });
 };
