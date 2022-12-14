@@ -10,7 +10,7 @@ exports.fazendoPost = (req, res, next) =>{
 };
 
 exports.getImages = (req, res) =>{
-    const uploadDir = process.cwd() + '/public/upload';
+    const uploadDir = process.cwd() + '/src/public/upload';
 
     const images = [];
 
@@ -21,7 +21,6 @@ readDir(uploadDir)
 // If promise resolved and datas are fetched
 .then(filenames => {
   for(let filename of filenames) {
-    console.log(filename);
     images.push(filename);
 }
 

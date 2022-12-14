@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const homeController = require('./controllers/homeController');
-const upload = require("./middlewares/uploadImage");
+const homeController = require('./src/controllers/homeController');
+const upload = require("./src/middlewares/uploadImage");
 
 
 router
