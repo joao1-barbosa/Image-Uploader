@@ -1,0 +1,3 @@
+function labelClick() {
+    alert("aaaaaaaaaaaaaa");
+}
