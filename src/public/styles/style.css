@@ -135,6 +135,7 @@ h2 {
 }
 
 .uploadBtn {
+    display: inline-block;
 
     width: 101px;
     height: 31.98px;
@@ -157,6 +158,13 @@ h2 {
     color: #ffffff;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.uploadBtn:hover{
+    cursor: pointer;
+}
 
 footer {
     grid-row-start: 5;

@@ -2,7 +2,12 @@
     <h1>Upload your image</h1>
     <h2>File should be Jpeg, Png,...</h2>
 
-    <div class="dragBox">
+    <div 
+    class="dragBox" 
+    id="dragBox" 
+    ondrop="dropHandler(event);"
+    ondragover="dragOverHandler(event);"
+    >
         <img src="../../public/icons/uploadIcon.svg" class="dragBox-image">
         <p class="dragBox-text">
             Drag & Drop your image here
@@ -12,14 +17,15 @@
     <p class="or">
         OR
     </p>
-    
-    <input
+
+    <!-- <input
     id="actual-btn"
     type="file"
     accept='image/jpeg, image/png'
-	hidden/>
+	hidden/> -->
     
-    <label for="actual-bnt" class="uploadBtn" onclick="labelClick()">
+    <label class="uploadBtn">
+        <input type="file"/>
         Choose a file
     </label>
 
