@@ -8,7 +8,7 @@ const upload = require("./src/middlewares/uploadImage");
 router
     .route('/')
     .get(homeController.homePage)
-    .post(upload.single('foto'), homeController.fazendoPost);
+    .post(upload.single('fileInput'), homeController.uploadImage);
 
 router
     .route('/images')
