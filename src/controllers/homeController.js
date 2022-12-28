@@ -7,11 +7,18 @@ exports.homePage = (req, res) => {
 
 exports.uploadImage = async (req, res, next) => {
     try {
-        return res.status(201).send('Image Uploaded');
+        if (req.file){
+            return res.status(201).send('Image Uploaded');
+        }
+        
+        return res.status(422);
+        
     } catch (error) {
         next(error);
     }
 };
+
+
 
 exports.getImages = (req, res) => {
     const uploadDir = process.cwd() + '/src/public/upload';

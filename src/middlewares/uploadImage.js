@@ -12,6 +12,7 @@ const storage = multer.diskStorage({
       cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
+      console.log(file);
       const uniqueSuffix = Date.now() + '-' + Math.floor(Math.random() * 1e9);
       cb(null,
         'image-'+
