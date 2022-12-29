@@ -9,7 +9,6 @@ window.onload = function () {
 
 }
 
-
 function dropHandler(ev) {
 
     // Prevent default behavior (Prevent file from being opened)
