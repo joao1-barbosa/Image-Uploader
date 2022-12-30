@@ -1,31 +1,23 @@
-function timer(){
-    return new Promise ((resolve, reject) => {
-      setInterval(() => {
-        console.log("timer on");
-        resolve();
-      }, 3000);
-    });
-  }
-
 exports.homePage = (req, res) => {
     res.render('home');
 };
 
-exports.uploadImage = async (req, res, next) => {
-    try {
-        if (req.file) {
-            res.render('loading', {path : req.file.path});
-            timer()
-            .then((answer) => {
-                console.log("FOI CARAIO");
-            });
-            return;
-        }
+exports.uploadImage = (req, res) => {
 
-        return res.status(422);
+    if (req.file) {
+        res.render('loading');
 
-    } catch (error) {
-        next(error);
+        setTimeout(() => {
+            console.log("upou");
+        }, 2600);
+
+        return;
     }
+
+    return res.status(422);
+
 };
 
+exports.uploadedPage = (req, res) => {
+    res.render('uploaded');
+}

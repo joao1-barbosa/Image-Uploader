@@ -9,4 +9,8 @@ router
     .get(homeController.homePage)
     .post(upload.single('fileInput'), homeController.uploadImage);
 
+router
+    .route('/uploaded')
+    .get(homeController.uploadedPage);
+
 module.exports = router;
