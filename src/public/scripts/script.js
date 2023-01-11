@@ -16,16 +16,19 @@ function dropHandler(ev) {
 
   if (ev.dataTransfer.items) {
     // Use DataTransferItemList interface to access the file(s)
-    [...ev.dataTransfer.items].forEach((item, i) => {
+    [...ev.dataTransfer.items].forEach((item) => {
       // If dropped items aren't files, reject them
       if (item.kind === 'file') {
-
         const image = item.getAsFile();
 
-        
+        let formData = new FormData();
 
-        document.forms["image-form"].submit();
+        formData.append('fileInput', image);
 
+        fetch('/', {
+          method: 'POST',
+          body: formData
+        });
       }
     });
   }
