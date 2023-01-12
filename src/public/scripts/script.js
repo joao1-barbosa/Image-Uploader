@@ -28,7 +28,17 @@ function dropHandler(ev) {
         fetch('/', {
           method: 'POST',
           body: formData
-        });
+        })
+          .then((response) => {
+            return response.text();
+          })
+          .then((html) => {
+            console.log(html);
+          })
+          .catch((err) => {
+            alert('deu erro no envio da imagem');
+            console.error(err);
+          });
       }
     });
   }
